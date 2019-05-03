@@ -14,54 +14,7 @@ namespace AutoMouse.Models
     [Serializable]
     public class MouseKeyHook
     {
-        private IKeyboardMouseEvents m_GlobalHook;
-        private TargetWindowInfo targetWinInfo;
-
-        public MouseKeyHook(TargetWindowInfo targetWinInfo)
-        {
-            this.targetWinInfo = targetWinInfo;
-        }
-
-        public void Subscribe()
-        {
-            if (m_GlobalHook == null)
-            {
-                // Note: for the application hook, use the Hook.AppEvents() instead
-                m_GlobalHook = Hook.GlobalEvents();
-            }
-
-            m_GlobalHook.MouseClick += OnMouseClick;
-        }
-
-        public void Unsubscribe()
-        {
-            if (m_GlobalHook == null) return;
-
-            m_GlobalHook.MouseDownExt -= OnMouseClick;
-
-            //It is recommened to dispose it
-            m_GlobalHook.Dispose();
-            m_GlobalHook = null;
-        }
-
-        private void OnMouseClick(object sender, MouseEventArgs e)
-        {
-            targetWinInfo.TargetWindowHandle = GetForegroundWindow();
-
-            RECT rc = new RECT();
-            GetWindowRect(targetWinInfo.TargetWindowHandle, ref rc);
-            int x = rc.Left;
-            int y = rc.Top;
-
-            targetWinInfo.WindowPosition = new Point(e.X - x, e.Y - y); ;
-
-            StringBuilder s = new StringBuilder(512);
-            int i = GetWindowText(targetWinInfo.TargetWindowHandle.ToInt32(), s, s.Capacity);
-
-            targetWinInfo.TargetWindowTitle = s.ToString();
-
-            Unsubscribe();
-        }
+        
 
         [DllImport("user32.dll", EntryPoint = "GetWindowText")]
         public static extern int GetWindowText(int hwnd, StringBuilder lpString, int cch);

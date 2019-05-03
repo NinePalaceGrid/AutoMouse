@@ -22,11 +22,11 @@ namespace AutoMouse.Models
 
         public override void Spellcast()
         {
-            if (!Form1.isRunning) return;
+            //if (!Form1.isRunning) return;
             var sim = new InputSimulator();
-            MouseKeyHook.mouseMoveTo(sim,
-                MouseKeyHook.TransferCoordinate(MouseKeyHook.GetWindowHandle(targetWinInfo.TargetWindowTitle),
-                targetWinInfo.WindowPosition));
+            Point p = MouseKeyHook.TransferCoordinate(MouseKeyHook.GetWindowHandle(targetWinInfo.TargetWindowTitle),
+                targetWinInfo.WindowPosition);
+            MouseKeyHook.mouseMoveTo(sim, p);
             sim.Mouse
                .LeftButtonClick();
         }
