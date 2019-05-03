@@ -104,6 +104,7 @@
             this.Controls.Add(this.btn_runTest);
             this.Controls.Add(this.btn_clickBtn);
             this.Name = "ClickElfForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "点击按钮";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClickElfForm_FormClosing);
             this.ResumeLayout(false);

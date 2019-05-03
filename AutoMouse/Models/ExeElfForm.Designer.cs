@@ -31,6 +31,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tb_exePath = new System.Windows.Forms.TextBox();
             this.btn_selectExe = new System.Windows.Forms.Button();
+            this.btn_runTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -44,13 +45,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_exePath.Location = new System.Drawing.Point(12, 12);
             this.tb_exePath.Name = "tb_exePath";
-            this.tb_exePath.Size = new System.Drawing.Size(175, 21);
+            this.tb_exePath.Size = new System.Drawing.Size(179, 21);
             this.tb_exePath.TabIndex = 0;
             // 
             // btn_selectExe
             // 
             this.btn_selectExe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_selectExe.Location = new System.Drawing.Point(197, 10);
+            this.btn_selectExe.Location = new System.Drawing.Point(201, 10);
             this.btn_selectExe.Name = "btn_selectExe";
             this.btn_selectExe.Size = new System.Drawing.Size(75, 23);
             this.btn_selectExe.TabIndex = 1;
@@ -58,11 +59,23 @@
             this.btn_selectExe.UseVisualStyleBackColor = true;
             this.btn_selectExe.Click += new System.EventHandler(this.btn_selectExe_Click);
             // 
+            // btn_runTest
+            // 
+            this.btn_runTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_runTest.Location = new System.Drawing.Point(201, 45);
+            this.btn_runTest.Name = "btn_runTest";
+            this.btn_runTest.Size = new System.Drawing.Size(75, 23);
+            this.btn_runTest.TabIndex = 3;
+            this.btn_runTest.Text = "试运行";
+            this.btn_runTest.UseVisualStyleBackColor = true;
+            this.btn_runTest.Click += new System.EventHandler(this.btn_runTest_Click);
+            // 
             // ExeElfForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 51);
+            this.ClientSize = new System.Drawing.Size(288, 80);
+            this.Controls.Add(this.btn_runTest);
             this.Controls.Add(this.btn_selectExe);
             this.Controls.Add(this.tb_exePath);
             this.Name = "ExeElfForm";
@@ -78,5 +91,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox tb_exePath;
         private System.Windows.Forms.Button btn_selectExe;
+        private System.Windows.Forms.Button btn_runTest;
     }
 }

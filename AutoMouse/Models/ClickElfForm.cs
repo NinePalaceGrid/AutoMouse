@@ -92,6 +92,7 @@ namespace AutoMouse.Models
         private void UpdateInfo()
         {
             tb_winTitle.Text = clickElf.targetWinInfo.TargetWindowTitle;
+
             tb_relativePoint.Text = clickElf.targetWinInfo.WindowPosition.X + "," +
                 clickElf.targetWinInfo.WindowPosition.Y;
         }

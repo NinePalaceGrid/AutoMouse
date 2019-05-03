@@ -22,7 +22,6 @@ namespace AutoMouse.Models
 
         public override void Spellcast()
         {
-            if (!Form1.isRunning || !File.Exists(ExePath)) return;
             Process p = new Process();
             p.StartInfo.WorkingDirectory = Environment.CurrentDirectory;
             p.StartInfo.FileName = ExePath;

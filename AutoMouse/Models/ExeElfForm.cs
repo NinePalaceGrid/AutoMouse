@@ -35,5 +35,10 @@ namespace AutoMouse.Models
                 exeElf.ExePath = tb_exePath.Text;
             }
         }
+
+        private void btn_runTest_Click(object sender, EventArgs e)
+        {
+            exeElf.Spellcast();
+        }
     }
 }
