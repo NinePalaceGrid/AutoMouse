@@ -107,8 +107,16 @@ namespace AutoMouse
             {
                 foreach (var elf in elfList)
                 {
-                    elf.Spellcast();
-                    status_run_status.Text = elf.ElfName;
+                    try
+                    {
+                        elf.Spellcast();
+                        status_run_status.Text = elf.ElfName;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return;
+                    }
                 }
             }
         }
